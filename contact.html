@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>견적문의 | 스마트청소</title>
+<meta name="description" content="스마트청소 무료 견적 문의. 간단한 정보만 남기면 당일 회신드립니다.">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{
+  --ink:#13202a;--primary:#0e7c86;--primary-dk:#0a5f67;--accent:#16b8a6;--soft:#e4f5f4;
+  --muted:#64757f;--line:#e3ebee;--bg:#f4f9fa;--foot:#0f1b23;--red:#e0492f;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Pretendard Variable",Pretendard,-apple-system,sans-serif;color:var(--ink);background:linear-gradient(170deg,#eef9f8 0%,#f7fcfc 30%,#ffffff 60%);background-attachment:fixed;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+@media(max-width:760px){.wrap{padding:0 30px}}
+@media(max-width:400px){.wrap{padding:0 26px}}
+
+/* 헤더 */
+header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{font-weight:800;font-size:20px;letter-spacing:-.02em;display:flex;align-items:center;gap:7px}
+.logo .mk{width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,var(--primary),var(--accent));display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:14px}
+.logo i{font-style:normal;color:var(--primary)}
+.menu{display:flex;gap:26px;font-size:14.5px;font-weight:600;color:#4b5563}
+.menu a{padding:4px 0;border-bottom:2px solid transparent}
+.menu a:hover{color:var(--primary)}
+.menu a.on{color:var(--primary);border-bottom-color:var(--primary)}
+.nav-cta{background:var(--primary);color:#fff;font-size:13.5px;font-weight:700;padding:10px 18px;border-radius:99px;transition:.15s;white-space:nowrap}
+.nav-cta:hover{background:var(--primary-dk)}
+@media(max-width:760px){.nav{height:58px}.logo{font-size:18px}.logo .mk{width:23px;height:23px}.menu{gap:15px;font-size:13.5px}.nav-cta{font-size:12.5px;padding:9px 14px}}
+@media(max-width:540px){
+  .nav{flex-wrap:wrap;height:auto;padding:11px 30px 9px;row-gap:9px}
+  .logo{order:1}.nav-cta{order:2;margin-left:auto}
+  .menu{order:3;flex-basis:100%;justify-content:center;gap:20px;font-size:14px;padding-top:5px;border-top:1px solid var(--line)}
+}
+
+/* 페이지 헤드 */
+.phead{background:rgba(244,249,250,.55);border-bottom:1px solid var(--line);padding:52px 0 46px;text-align:center}
+.phead .badge{display:inline-block;background:var(--soft);color:var(--primary-dk);font-size:13px;font-weight:700;padding:7px 14px;border-radius:99px}
+.phead h1{font-size:clamp(27px,3.6vw,38px);font-weight:800;letter-spacing:-.03em;margin-top:14px}
+.phead p{margin-top:12px;color:var(--muted);font-size:15.5px;line-height:1.75}
+@media(max-width:760px){.phead{padding:36px 0 34px}}
+
+/* 본문 */
+.main{padding:56px 0 70px}
+.grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:44px;align-items:start}
+@media(max-width:880px){.grid{grid-template-columns:1fr;gap:32px}.main{padding:40px 0 50px}}
+
+/* 왼쪽 안내 */
+.aside .card{background:rgba(255,255,255,.7);border:1px solid var(--line);border-radius:20px;padding:26px}
+.aside h3{font-size:17px;font-weight:800;letter-spacing:-.02em}
+.aside .steps{list-style:none;margin-top:18px;display:grid;gap:14px}
+.aside .steps li{display:flex;gap:12px;align-items:flex-start}
+.aside .steps .n{flex:none;width:24px;height:24px;border-radius:50%;background:var(--primary);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.aside .steps b{display:block;font-size:14.5px;font-weight:700}
+.aside .steps p{font-size:13px;color:var(--muted);margin-top:2px;line-height:1.55}
+.callbox{margin-top:14px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px 24px;text-align:center}
+.callbox span{font-size:13px;color:var(--muted);font-weight:600}
+.callbox a{display:block;font-size:23px;font-weight:800;color:var(--primary);letter-spacing:-.02em;margin-top:4px}
+.callbox p{font-size:12.5px;color:#9aa3b0;margin-top:6px}
+
+/* 폼 */
+.formbox{border:1px solid var(--line);border-radius:20px;padding:30px 30px 34px;background:#fff;box-shadow:0 6px 24px rgba(14,124,134,.06)}
+@media(max-width:540px){.formbox{padding:22px 18px 26px}}
+.field{margin-bottom:22px}
+.field label{display:block;font-size:14px;font-weight:700;color:#374151;margin-bottom:8px}
+.req{color:var(--red);margin-left:3px}
+input[type=text],input[type=email],input[type=tel],textarea{
+  width:100%;border:1.5px solid #d1dfe1;border-radius:12px;padding:13px 14px;
+  font:inherit;font-size:14.5px;color:var(--ink);background:#fff;transition:.15s}
+input::placeholder,textarea::placeholder{color:#a7b4b8}
+input:focus,textarea:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 4px rgba(14,124,134,.1)}
+.tel-row{display:flex;align-items:center;gap:8px}
+.tel-row input{width:92px;text-align:center}
+.tel-row span{color:#b4c0c3}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+@media(max-width:540px){.checks{grid-template-columns:1fr}}
+.checks label{display:flex;align-items:center;gap:9px;font-size:14px;color:#3f4753;font-weight:500;cursor:pointer;
+  border:1.5px solid var(--line);border-radius:12px;padding:11px 13px;transition:.15s;margin:0}
+.checks label:hover{border-color:#a5dedb;background:#f7fdfd}
+.checks label.hot{border-color:#a5dedb;background:#f2fbfb}
+.checks input{width:17px;height:17px;accent-color:var(--primary);cursor:pointer;flex:none}
+textarea{min-height:112px;resize:vertical}
+.agree{border-top:1px solid var(--line);padding-top:20px}
+.agree .row{display:flex;align-items:center;gap:9px;font-size:14px;color:#3f4753;cursor:pointer}
+.agree input{width:17px;height:17px;accent-color:var(--primary);cursor:pointer}
+.agree a{text-decoration:underline;color:var(--primary)}
+.note{margin-top:9px;font-size:12.5px;color:#9aa3b0;line-height:1.6}
+button[type=submit]{width:100%;margin-top:24px;background:var(--primary);color:#fff;font:inherit;font-weight:800;font-size:16px;
+  padding:16px;border:none;border-radius:14px;cursor:pointer;transition:.15s}
+button[type=submit]:hover{background:var(--primary-dk)}
+
+/* 푸터 */
+footer{background:var(--foot);color:#bacace;padding:46px 0 54px;font-size:13.5px}
+.fg{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px}
+@media(max-width:760px){.fg{grid-template-columns:1fr}}
+.fb{font-size:17px;font-weight:800;color:#fff;margin-bottom:12px;display:flex;align-items:center;gap:7px}
+.fb .mk{width:24px;height:24px;border-radius:7px;background:linear-gradient(135deg,var(--primary),var(--accent));display:inline-flex;align-items:center;justify-content:center;font-size:13px}
+.fb i{font-style:normal;color:#5fd0c4}
+.fi p{margin-top:5px;line-height:1.7;color:#92a4a9}
+.fi b{color:#dde8ea;font-weight:700}
+.fc h4{font-size:12.5px;font-weight:700;color:#7a8f94;margin-bottom:12px;letter-spacing:.06em}
+.fc a{display:block;margin-top:8px;color:#bacace}
+.fc a:hover{color:#fff}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="index.html"><span class="mk">✦</span>스마트<i>청소</i></a>
+    <nav class="menu">
+      <a href="index.html">홈</a>
+      <a href="services.html">서비스</a>
+      <a href="contact.html" class="on">견적문의</a>
+    </nav>
+    <a class="nav-cta" href="tel:01000000000">010-0000-0000</a>
+  </div>
+</header>
+
+<!-- ===================== 페이지 헤드 ===================== -->
+<section class="phead">
+  <div class="wrap">
+    <span class="badge">✦ 무료 견적 · 당일 회신</span>
+    <h1>1분이면 견적 요청 끝</h1>
+    <p>간단한 정보만 남겨주시면 빠르게 연락드려<br>정확한 견적을 안내해드립니다.</p>
+  </div>
+</section>
+
+<!-- ===================== 본문 ===================== -->
+<section class="main">
+  <div class="wrap grid">
+
+    <div class="aside">
+      <div class="card">
+        <h3>이렇게 진행됩니다</h3>
+        <ul class="steps">
+          <li><span class="n">1</span><div><b>견적 요청</b><p>연락처와 필요한 서비스만 남겨주세요.</p></div></li>
+          <li><span class="n">2</span><div><b>상담 연락</b><p>당일 연락드려 공간과 상황을 확인합니다.</p></div></li>
+          <li><span class="n">3</span><div><b>견적 안내</b><p>확인된 내용으로 정확한 금액을 알려드립니다.</p></div></li>
+          <li><span class="n">4</span><div><b>일정 조율</b><p>원하시는 날짜와 시간에 맞춰 진행합니다.</p></div></li>
+        </ul>
+      </div>
+      <div class="callbox">
+        <span>바로 통화가 편하시면</span>
+        <a href="tel:01000000000">010-0000-0000</a>
+        <p>전지역 출장 상담</p>
+      </div>
+    </div>
+
+    <!--
+      ★ 폼 전송 설정 ★
+      아래 form의 action에서 "여기에이메일입력"을 실제 이메일 주소로 바꾸세요.
+      예: action="https://formsubmit.co/example@naver.com"
+      첫 제출 시 해당 이메일로 인증 메일이 오고, 인증하면 이후 문의가 이메일로 들어옵니다.
+    -->
+    <form class="formbox" action="https://formsubmit.co/여기에이메일입력" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="[스마트청소] 새 견적 문의가 도착했습니다">
+
+      <div class="field">
+        <label>성함<span class="req">*</span></label>
+        <input type="text" name="성함" placeholder="이름을 입력해주세요" required>
+      </div>
+
+      <div class="field">
+        <label>연락처<span class="req">*</span></label>
+        <div class="tel-row">
+          <input type="tel" name="연락처1" maxlength="3" pattern="[0-9]{2,3}" placeholder="010" required>
+          <span>-</span>
+          <input type="tel" name="연락처2" maxlength="4" pattern="[0-9]{3,4}" placeholder="0000" required>
+          <span>-</span>
+          <input type="tel" name="연락처3" maxlength="4" pattern="[0-9]{4}" placeholder="0000" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>이메일</label>
+        <input type="email" name="이메일" placeholder="선택 입력">
+      </div>
+
+      <div class="field">
+        <label>필요한 서비스<span class="req">*</span></label>
+        <div class="checks">
+          <label class="hot"><input type="checkbox" name="필요서비스" value="입주청소"> 입주청소</label>
+          <label><input type="checkbox" name="필요서비스" value="사무실 청소"> 사무실 청소</label>
+          <label><input type="checkbox" name="필요서비스" value="매장 청소"> 카페·매장 청소</label>
+          <label><input type="checkbox" name="필요서비스" value="정기관리 청소"> 정기관리 청소</label>
+          <label><input type="checkbox" name="필요서비스" value="준공/리모델링 청소"> 준공·리모델링</label>
+          <label><input type="checkbox" name="필요서비스" value="카펫/소파 청소"> 카펫·소파 청소</label>
+          <label><input type="checkbox" name="필요서비스" value="유리창/외벽 청소"> 유리창·외벽 청소</label>
+          <label><input type="checkbox" name="필요서비스" value="기타 청소"> 기타 (상담 시 문의)</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>남기실 말씀</label>
+        <textarea name="기타사항" placeholder="공간 위치, 평수, 희망 일정 등을 적어주시면 더 정확한 견적이 가능합니다."></textarea>
+      </div>
+
+      <div class="agree">
+        <label class="row"><input type="checkbox" required> <span>(필수) <a href="privacy.html" target="_blank">개인정보 수집 및 이용</a>에 동의합니다.</span></label>
+        <p class="note">※ 입력하신 정보는 견적 상담 목적으로만 사용됩니다.</p>
+      </div>
+
+      <button type="submit">무료 견적 요청하기</button>
+    </form>
+
+  </div>
+</section>
+
+<!-- ===================== 푸터 ===================== -->
+<footer>
+  <div class="wrap fg">
+    <div class="fi">
+      <div class="fb"><span class="mk">✦</span>스마트<i>청소</i></div>
+      <p>입주·사무실·종합청소 전문업체</p>
+      <p><b>빠른 견적 문의 010-0000-0000</b></p>
+      <p>상호명: 스마트청소&nbsp;&nbsp;대표: 000&nbsp;&nbsp;사업자등록번호: 000-00-00000</p>
+      <p>이메일: 000@naver.com</p>
+    </div>
+    <div class="fc">
+      <h4>MENU</h4>
+      <a href="index.html">홈</a>
+      <a href="services.html">서비스</a>
+      <a href="contact.html">견적문의</a>
+    </div>
+    <div class="fc">
+      <h4>POLICY</h4>
+      <a href="privacy.html">개인정보처리방침</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
