@@ -32,7 +32,7 @@ img{max-width:100%;display:block}
 header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:66px}
 .logo{font-weight:800;font-size:20px;letter-spacing:-.02em;display:flex;align-items:center;gap:7px}
-.logo .mk{width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,var(--primary),var(--accent));display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:14px}
+.logo .mk{width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#334155,#0f172a);display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:14px}
 .logo i{font-style:normal;color:var(--primary)}
 .menu{display:flex;gap:26px;font-size:14.5px;font-weight:600;color:#4b5563}
 .menu a{padding:4px 0;border-bottom:2px solid transparent}
@@ -152,7 +152,7 @@ footer{background:var(--foot);color:#bacace;padding:46px 0 54px;font-size:13.5px
 .fg{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px}
 @media(max-width:760px){.fg{grid-template-columns:1fr}}
 .fb{font-size:17px;font-weight:800;color:#fff;margin-bottom:12px;display:flex;align-items:center;gap:7px}
-.fb .mk{width:24px;height:24px;border-radius:7px;background:linear-gradient(135deg,var(--primary),var(--accent));display:inline-flex;align-items:center;justify-content:center;font-size:13px}
+.fb .mk{width:24px;height:24px;border-radius:7px;background:linear-gradient(135deg,#334155,#0f172a);display:inline-flex;align-items:center;justify-content:center;font-size:13px}
 .fb i{font-style:normal;color:#5fd0c4}
 .fi p{margin-top:5px;line-height:1.7;color:#92a4a9}
 .fi b{color:#dde8ea;font-weight:700}
@@ -166,7 +166,7 @@ footer{background:var(--foot);color:#bacace;padding:46px 0 54px;font-size:13.5px
 <!-- ===================== 헤더 ===================== -->
 <header>
   <div class="wrap nav">
-    <a class="logo" href="index.html"><span class="mk">✦</span>스마트<i>청소</i></a>
+    <a class="logo" href="index.html"><span class="mk"><svg viewBox="0 0 24 24" fill="#5eead4" width="16" height="16"><path d="M12 3 l9 7 h-2.5 v9 h-13 v-9 h-2.5 z"/></svg></span>스마트<i>청소</i></a>
     <nav class="menu">
       <a href="index.html" class="on">홈</a>
       <a href="services.html">서비스</a>
@@ -192,9 +192,9 @@ footer{background:var(--foot);color:#bacace;padding:46px 0 54px;font-size:13.5px
       <div><b>전지역</b>출장 상담</div>
     </div>
   </div>
-  <!-- 대표 사진 자리 : 아래 div를 <img class="hero-img" src="images/main.jpg" alt="스마트청소 현장" style="object-fit:cover"> 로 교체 -->
-  <div class="hero-img">대표 현장 사진
-    <div class="float f1">입주청소 완료<s>34평 아파트 · 4시간</s></div>
+  <!-- 대표 현장 사진 -->
+  <div class="hero-img" style="background-image:url('images/마곡_베이커리1.jpg');background-size:cover;background-position:center;color:transparent">
+    <div class="float f1">정기청소 진행중<s>마곡 베이커리 카페</s></div>
     <div class="float f2">✦ 무료 견적</div>
   </div>
 </section>
@@ -255,9 +255,14 @@ footer{background:var(--foot);color:#bacace;padding:46px 0 54px;font-size:13.5px
       <p>사진으로 확인하는 실제 작업 결과</p>
     </div>
     <div class="gal-grid">
-      <!-- 사진 교체: <div class="ph">사진</div> → <img class="ph" src="images/파일명.jpg" alt="설명" style="object-fit:cover"> -->
-      <div class="ph">사진</div><div class="ph">사진</div><div class="ph">사진</div><div class="ph">사진</div>
-      <div class="ph">사진</div><div class="ph">사진</div><div class="ph">사진</div><div class="ph">사진</div>
+      <img class="ph" src="images/마곡_베이커리2.jpg" alt="카페 청소 현장" style="object-fit:cover">
+      <img class="ph" src="images/마곡_베이커리3.jpg" alt="카페 청소 현장" style="object-fit:cover">
+      <img class="ph" src="images/마곡_베이커리4.jpg" alt="카페 청소 현장" style="object-fit:cover">
+      <img class="ph" src="images/사무실3.jpg" alt="사무실 청소 현장" style="object-fit:cover">
+      <img class="ph" src="images/학원1.jpg" alt="학원 청소 현장" style="object-fit:cover">
+      <img class="ph" src="images/독서실1.jpg" alt="독서실 청소 현장" style="object-fit:cover">
+      <img class="ph" src="images/복도1.jpg" alt="복도 바닥 청소" style="object-fit:cover">
+      <img class="ph" src="images/카페1.jpg" alt="매장 청소 현장" style="object-fit:cover">
     </div>
   </div>
 </section>
@@ -272,20 +277,20 @@ footer{background:var(--foot);color:#bacace;padding:46px 0 54px;font-size:13.5px
     <div class="bgrid">
       <!-- href="#" 를 실제 블로그 글 주소로 교체하세요 -->
       <a class="bcard" href="#" target="_blank" rel="noopener">
-        <div class="ph">사진</div>
-        <div class="bbody"><h3>신축 아파트 입주청소</h3><p>이사 전 34평 아파트 입주청소 진행 현장입니다.</p><span>스마트청소</span></div>
+        <img class="ph" src="images/마곡_베이커리6.jpg" alt="카페 정기청소" style="object-fit:cover">
+        <div class="bbody"><h3>마곡 베이커리 카페 정기청소</h3><p>주 6회 진행 중인 매장 정기관리 현장입니다.</p><span>스마트청소</span></div>
       </a>
       <a class="bcard" href="#" target="_blank" rel="noopener">
-        <div class="ph">사진</div>
+        <img class="ph" src="images/사무실2.jpg" alt="사무실 정기청소" style="object-fit:cover">
         <div class="bbody"><h3>사무실 정기청소</h3><p>주 3회 진행 중인 사무실 정기관리 현장입니다.</p><span>스마트청소</span></div>
       </a>
       <a class="bcard" href="#" target="_blank" rel="noopener">
-        <div class="ph">사진</div>
+        <img class="ph" src="images/리모델링.jpg" alt="리모델링 준공청소" style="object-fit:cover">
         <div class="bbody"><h3>준공청소 · 분진 제거</h3><p>인테리어 공사 이후 전체 준공청소 현장입니다.</p><span>스마트청소</span></div>
       </a>
       <a class="bcard" href="#" target="_blank" rel="noopener">
-        <div class="ph">사진</div>
-        <div class="bbody"><h3>매장 바닥 왁싱 청소</h3><p>바닥 왁싱으로 광택까지 살린 작업 사례입니다.</p><span>스마트청소</span></div>
+        <img class="ph" src="images/계단.jpg" alt="계단 청소" style="object-fit:cover">
+        <div class="bbody"><h3>건물 계단·공용부 청소</h3><p>놓치기 쉬운 공용공간까지 관리한 사례입니다.</p><span>스마트청소</span></div>
       </a>
     </div>
     <div class="more">
@@ -315,7 +320,7 @@ footer{background:var(--foot);color:#bacace;padding:46px 0 54px;font-size:13.5px
 <footer>
   <div class="wrap fg">
     <div class="fi">
-      <div class="fb"><span class="mk">✦</span>스마트<i>청소</i></div>
+      <div class="fb"><span class="mk"><svg viewBox="0 0 24 24" fill="#5eead4" width="16" height="16"><path d="M12 3 l9 7 h-2.5 v9 h-13 v-9 h-2.5 z"/></svg></span>스마트<i>청소</i></div>
       <p>입주·사무실·종합청소 전문업체</p>
       <p><b>빠른 견적 문의 010-0000-0000</b></p>
       <p>상호명: 스마트청소&nbsp;&nbsp;대표: 000&nbsp;&nbsp;사업자등록번호: 000-00-00000</p>
